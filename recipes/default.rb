@@ -50,6 +50,8 @@ end
 # create the docker service
 docker_service 'default' do
   storage_driver node['amazon-ecs-agent']['storage_driver']
+  log_driver node['amazon-ecs-agent']['docker']['log_driver'] if node['amazon-ecs-agent']['docker']['log_driver']
+  bip node['amazon-ecs-agent']['docker']['bip'] if node['amazon-ecs-agent']['docker']['bip']
   action [:create, :start]
 end
 
