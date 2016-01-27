@@ -62,6 +62,7 @@ docker_image 'amazon/amazon-ecs-agent'
 docker_container 'amazon-ecs-agent' do
   repo 'amazon/amazon-ecs-agent'
   port '51678:51678'
+  restart_policy 'always'
   tag 'latest'
   env [
     'ECS_LOGFILE=/log/ecs-agent.log',
