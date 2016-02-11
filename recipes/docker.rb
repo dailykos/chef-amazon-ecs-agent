@@ -28,12 +28,12 @@ apt_repository 'docker' do
 end
 
 # create the default log folder
-directory node['amazon-ecs-agent']['log_folder'] do
+directory node['amazon-ecs-agent']['host_log_folder'] do
   mode 0755
   action :create
 end
 
-directory node['amazon-ecs-agent']['data_folder'] do
+directory node['amazon-ecs-agent']['host_data_folder'] do
   mode 0755
   action :create
 end
