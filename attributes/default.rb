@@ -1,10 +1,10 @@
-default['amazon-ecs-agent']['log_folder'] = '/var/log/ecs'
-default['amazon-ecs-agent']['data_folder'] = '/opt/ecs'
+default['amazon-ecs-agent']['host_log_folder'] = '/var/log/ecs'
+default['amazon-ecs-agent']['container_log_folder'] = '/log'
+default['amazon-ecs-agent']['host_data_folder'] = '/opt/ecs'
+default['amazon-ecs-agent']['container_data_folder'] = '/data'
 default['amazon-ecs-agent']['log_level'] = 'info'
 default['amazon-ecs-agent']['cluster'] = 'default'
-default['amazon-ecs-agent']['aws_access_key_id'] = nil
-default['amazon-ecs-agent']['aws_secret_access_key'] = nil
-default['amazon-ecs-agent']['tag'] = 'v1.0.0'
+default['amazon-ecs-agent']['tag'] = 'latest'
 default['amazon-ecs-agent']['storage_driver'] = 'aufs'
 default['amazon-ecs-agent']['docker']['version'] = '1.10.0'
 default['amazon-ecs-agent']['docker_additional_binds'] = []

@@ -24,17 +24,16 @@ docker_container 'amazon-ecs-agent' do
   repo 'amazon/amazon-ecs-agent'
   port '51678:51678'
   restart_policy 'always'
-  tag 'latest'
+  tag node['amazon-ecs-agent']['tag'],
   env [
     'ECS_LOGFILE=/log/ecs-agent.log',
     "ECS_LOGLEVEL=#{node['amazon-ecs-agent']['log_level']}",
     "ECS_CLUSTER=#{node['amazon-ecs-agent']['cluster']}",
-    "AWS_ACCESS_KEY_ID=#{node['amazon-ecs-agent']['aws_access_key_id']}",
-    "AWS_SECRET_ACCESS_KEY=#{node['amazon-ecs-agent']['aws_secret_access_key']}"
+    "ECS_DATADIR=#{node['amazon-ecs-agent']['container_data_folder']}"
   ] + node['amazon-ecs-agent']['docker_additional_env']
   binds [
-    "#{node['amazon-ecs-agent']['log_folder']}:/log",
+    "#{node['amazon-ecs-agent']['host_log_folder']}:#{node['amazon-ecs-agent']['container_log_folder']}",
     '/var/run/docker.sock:/var/run/docker.sock',
-    "#{node['amazon-ecs-agent']['data_folder']}:/data"
+    "#{node['amazon-ecs-agent']['host_data_folder']}:#{node['amazon-ecs-agent']['container_data_folder']}"
   ] + node['amazon-ecs-agent']['docker_additional_binds']
 end
