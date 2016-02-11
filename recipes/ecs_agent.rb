@@ -24,7 +24,7 @@ docker_container 'amazon-ecs-agent' do
   repo 'amazon/amazon-ecs-agent'
   port '51678:51678'
   restart_policy 'always'
-  tag node['amazon-ecs-agent']['tag'],
+  tag node['amazon-ecs-agent']['tag']
   env [
     'ECS_LOGFILE=/log/ecs-agent.log',
     "ECS_LOGLEVEL=#{node['amazon-ecs-agent']['log_level']}",
