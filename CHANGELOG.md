@@ -1,9 +1,5 @@
-# 0.1.0
+# 1.1.6
 
-Initial release of amazon-ecs-agent
+  * Make sure we pull the same tag that we use in the container
+  * Update docker version, add aws logger
 
-* Enhancements
-  * an enhancement
-
-* Bug Fixes
-  * a bug fix
