@@ -16,8 +16,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# pull down the latest image
-docker_image 'amazon/amazon-ecs-agent'
+docker_image 'amazon/amazon-ecs-agent' do
+  action :pull
+  tag node['amazon-ecs-agent']['tag']
+end
 
 # start the container and map it to port 8484
 docker_container 'amazon-ecs-agent' do
