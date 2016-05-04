@@ -6,6 +6,8 @@ default['amazon-ecs-agent']['log_level'] = 'info'
 default['amazon-ecs-agent']['cluster'] = 'default'
 default['amazon-ecs-agent']['tag'] = 'latest'
 default['amazon-ecs-agent']['storage_driver'] = 'aufs'
-default['amazon-ecs-agent']['docker']['version'] = '1.10.0'
+default['amazon-ecs-agent']['docker']['version'] = '1.11.1'
 default['amazon-ecs-agent']['docker_additional_binds'] = []
-default['amazon-ecs-agent']['docker_additional_env'] = []
+default['amazon-ecs-agent']['docker_additional_env'] = [
+  "ECS_AVAILABLE_LOGGING_DRIVERS=['syslog','json-file','awslogs']"
+]
