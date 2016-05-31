@@ -4,10 +4,10 @@ maintainer_email 'williamejsalt@gmail.com'
 license 'Apache 2.0'
 description 'Installs/Configures amazon-ecs-agent'
 long_description 'Installs/Configures amazon-ecs-agent'
-version '1.1.7'
+version '1.1.8'
 
 supports 'ubuntu'
 
-depends 'docker'
+depends 'docker', '~> 2.7.1'
 depends 'chef-sugar'
 depends 'apt'
