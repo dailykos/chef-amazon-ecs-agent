@@ -51,7 +51,7 @@ end
 docker_service 'default' do
   storage_driver node['amazon-ecs-agent']['storage_driver']
   log_driver node['amazon-ecs-agent']['docker']['log_driver'] if node['amazon-ecs-agent']['docker']['log_driver']
-  log_opts node['amazon-ecs-agent']['docker']['log_opts'] if node['amazon-ecs-agent']['docker']['log_opts']
+  log_opts node['amazon-ecs-agent']['docker']['log_opts']
   bip node['amazon-ecs-agent']['docker']['bip'] if node['amazon-ecs-agent']['docker']['bip']
   action [:create, :start]
 end
