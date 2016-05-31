@@ -4,7 +4,7 @@ maintainer_email 'williamejsalt@gmail.com'
 license 'Apache 2.0'
 description 'Installs/Configures amazon-ecs-agent'
 long_description 'Installs/Configures amazon-ecs-agent'
-version '1.1.6'
+version '1.1.7'
 
 supports 'ubuntu'
 
