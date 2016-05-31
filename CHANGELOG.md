@@ -1,4 +1,8 @@
 
+# 1.1.9
+
+  * Set log_opts to emtpy array
+
 # 1.1.8
 
   * Always overrite the docker service log_opts
