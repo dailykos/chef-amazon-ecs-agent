@@ -1,4 +1,8 @@
 
+# 1.1.10
+
+  * Update docker version
+
 # 1.1.9
 
   * Set log_opts to emtpy array
